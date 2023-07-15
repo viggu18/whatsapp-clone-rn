@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Calls = () => {
+const CallLog = () => {
   return (
     <View>
-      <Text>Calls</Text>
+      <Text>CallLog</Text>
     </View>
   )
 }
 
-export default Calls
+export default CallLog
 
 const styles = StyleSheet.create({})

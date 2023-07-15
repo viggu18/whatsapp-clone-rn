@@ -5,7 +5,7 @@ import Header from './Header'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import ChatList from '../ChatList/ChatList'
 import Status from './components/Status'
-import Calls from './components/Calls'
+import CallHistory from '../Calls/CallHistory'
 import { useIsFocused } from '@react-navigation/native'
 
 const Tab = createMaterialTopTabNavigator();
@@ -29,7 +29,7 @@ const Home = () => {
             tabBarPosition='top' initialRouteName='Chats'>
             <Tab.Screen name='Chats' component={ChatList}/>
             <Tab.Screen name='Status' component={Status} />
-            <Tab.Screen name='Calls' component={Calls} />
+            <Tab.Screen name='Calls' component={CallHistory} />
         </Tab.Navigator>
     </View>
   )

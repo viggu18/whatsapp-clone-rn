@@ -9,7 +9,13 @@ import RegisterUser from './components/Registration/RegisterUser';
 import Home from './components/Home/Home';
 import Chat from './components/ChatScreen/Chat';
 
-const screenOptions={headerShown: false,};
+import CallDetails from './components/Calls/components/CallDetails';
+
+const screenOptions={
+    headerShown: false,
+    gestureEnabled: true,
+    animationTypeForReplace: 'pop'
+};
 
 const Registration = () => {
     const Register = createNativeStackNavigator();
@@ -28,6 +34,7 @@ const HomeNav = () => {
         <ChatSection.Navigator screenOptions={screenOptions}>
             <ChatSection.Screen name='Home' component={Home}/>
             <ChatSection.Screen name='Chat' component={Chat}/>
+            <ChatSection.Screen name='CallDetails' component={CallDetails}/>
         </ChatSection.Navigator>
     )
 }

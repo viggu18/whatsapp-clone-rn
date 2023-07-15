@@ -6,6 +6,7 @@ import { Icon } from '@rneui/themed'
 const BottomComponent = ({message,setMessage}) => {
   return (
     <View style={styles.BottomComponentContainer}>
+        <View style={styles.parentInput}>
         <View style={styles.inputContainer}>
             <TouchableOpacity style={styles.emojiButton}>
                 <Icon 
@@ -16,9 +17,10 @@ const BottomComponent = ({message,setMessage}) => {
                     color='black'/>
             </TouchableOpacity>
             <TextInput 
+                multiline={true}
                 placeholder='Enter your message here' 
                 value={message} onChangeText={(text)=>setMessage(text)}
-                style/>
+                style={styles.messageInput}/>
             <TouchableOpacity style={styles.fileModal}>
                 <Icon 
                     type='feather' 
@@ -28,8 +30,9 @@ const BottomComponent = ({message,setMessage}) => {
                     color='black'/>
             </TouchableOpacity>
         </View>
+        </View>
         <View style={styles.voiceComponent}>
-            <TouchableOpacity style={styles.micHolder}>
+            <TouchableOpacity style={styles.micHolder} activeOpacity={0.6}>
                 <Icon type='material-community' name='microphone' style={styles.mic} size={30} color='black'/>
             </TouchableOpacity>
         </View>
@@ -46,26 +49,36 @@ const styles = StyleSheet.create({
         width: windowWidth,
         height: windowHeight * 0.1,
         flexDirection: 'row',
-        justifyContent: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    parentInput:{
+        justifyContent: 'center',
+        width: '80%',
+        height: '70%',
+        // marginRight: ''
     },
     inputContainer: {
         backgroundColor: 'white',
-        width: '80%',
-        height: '70%',
-        margin: 5,
+        width: '100%',
+        height: '100%',
         borderRadius: 30,
         flexDirection: 'row',
-        justifyContent:'center'
     },
     emojiButton: {
         backgroundColor: 'white',
-        // justifyContent: 'center',
+        justifyContent: 'center',
         borderRadius: 30
     },
     emojiIcon: {
         width: 30,
         height: 30,
         margin: 8
+    },
+    messageInput: {
+        position: 'relative',
+        width: 'auto',
+        width: '70%'
     },
     fileModal: {
      position: 'absolute',
@@ -77,9 +90,10 @@ const styles = StyleSheet.create({
     micHolder: {
         borderRadius: 30,
         backgroundColor: '#128C7E',
-        width: 45,
-        height: 45,
-        justifyContent: 'center'
+        width: 50,
+        height: 50,
+        justifyContent: 'center',
+        marginLeft: 10
     },
     voiceComponent: {
         justifyContent: 'center'

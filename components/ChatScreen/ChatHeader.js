@@ -44,9 +44,9 @@ export default ChatHeader
 const styles = StyleSheet.create({
     headerContainer: {
         width: windowWidth,
-        height: windowHeight * 0.12,
+        height: windowHeight * 0.1,
         backgroundColor: '#128C7E',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     leftContainer: {
         bottom: 0,
